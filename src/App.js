@@ -98,7 +98,7 @@ class App extends Component {
             })}
           </dl>}
         <form
-          onSubmit={(e, csrfToken) => {
+          onSubmit={(e) => {
             e.preventDefault()
             fetch('http://cake.tgn/articles',
               {
@@ -114,8 +114,7 @@ class App extends Component {
                 body: JSON.stringify({
                   user_id: 1,
                   title: e.target.elements.title.value,
-                  body: e.target.elements.body.value,
-                  anotherValue: 'hi'
+                  body: e.target.elements.body.value
                 }),
               }
             ).then((response) => {
@@ -148,7 +147,9 @@ class App extends Component {
           <label htmlFor="body">
             Body <input name="body" />
           </label>
-          <button type="submit">Submit</button>
+          <button 
+            style={{ 'margin-top': '15px'}}
+            type="submit">Submit</button>
         </form>
 
 
