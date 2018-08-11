@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import qs from 'qs';
 import { withCookies, Cookies } from 'react-cookie';
+
+import baseUrl from './settings'
+
 class App extends Component {
 
   constructor(props) {
@@ -11,7 +14,7 @@ class App extends Component {
   }
 
   sendFetch(method = 'GET', options = {}) {
-    return fetch('http://cake.tgn/articles',
+    return fetch(baseUrl,
       {
         method: method,
         mode: 'cors',
@@ -60,7 +63,7 @@ class App extends Component {
                 <dt
                   style={{ cursor: 'pointer' }}
                   onClick={() => {
-                    fetch('http://cake.tgn/articles/' + id,
+                    fetch(baseUrl + '/' + id,
                       {
                         method: 'DELETE',
                         mode: 'cors',
@@ -100,7 +103,7 @@ class App extends Component {
         <form
           onSubmit={(e) => {
             e.preventDefault()
-            fetch('http://cake.tgn/articles',
+            fetch(baseUrl,
               {
                 mode: 'cors',
                 method: 'POST',
