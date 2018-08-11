@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && rm -rf /Users/jmcd/sites/cake/webroot/react && cp -rv build /Users/jmcd/sites/cake/webroot/react",
+    "build": "react-scripts build && rm -rf /Users/jmcd/sites/caketmp/webroot/react && cp -rv build /Users/jmcd/sites/caketmp/webroot/react",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
