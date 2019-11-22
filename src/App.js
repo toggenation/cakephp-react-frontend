@@ -2,19 +2,19 @@ import React, { Component } from 'react';
 import qs from 'qs';
 import { withCookies, Cookies } from 'react-cookie';
 
-import baseUrl from './settings'
+
 
 class App extends Component {
 
   constructor(props) {
     super(props)
-
-
     this.state = {}
+
   }
 
+
   sendFetch(method = 'GET', options = {}) {
-    return fetch(baseUrl,
+    return fetch(this.props.baseurl,
       {
         method: method,
         mode: 'cors',
@@ -63,7 +63,7 @@ class App extends Component {
                 <dt
                   style={{ cursor: 'pointer' }}
                   onClick={() => {
-                    fetch(baseUrl + '/' + id,
+                    fetch(this.props.baseurl + '/' + id,
                       {
                         method: 'DELETE',
                         mode: 'cors',
@@ -103,7 +103,7 @@ class App extends Component {
         <form
           onSubmit={(e) => {
             e.preventDefault()
-            fetch(baseUrl,
+            fetch(this.props.baseurl,
               {
                 mode: 'cors',
                 method: 'POST',
@@ -150,7 +150,7 @@ class App extends Component {
           <label htmlFor="body">
             Body <input name="body" />
           </label>
-          <button 
+          <button
             style={{ 'margin-top': '15px'}}
             type="submit">Submit</button>
         </form>
